@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.summary       = "Veracode hmac signing library used with Veracode API"
   spec.homepage      = "https://CorbanR.github.io/veracode_api_signing"
   spec.license       = "MIT"
-  spec.required_ruby_version = ">= 2.4.0"
+  spec.required_ruby_version = ">= 2.6.0"
 
   spec.metadata["allowed_push_host"] = "TODO: Set to 'https://mygemserver.com'"
 
@@ -33,6 +33,9 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 13.0"
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "rubocop", "~> 1.2"
+  spec.add_development_dependency "rubocop-performance", "~> 1.1"
+  spec.add_development_dependency "rubocop-rake", "~> 0.6"
+  spec.add_development_dependency "rubocop-rspec", "~> 2.5"
   spec.add_development_dependency "simplecov", "~> 0.21.2"
   spec.add_development_dependency "yard", "~> 0.9.26"
 end

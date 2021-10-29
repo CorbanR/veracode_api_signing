@@ -5,7 +5,6 @@ require "uri"
 
 module VeracodeApiSigning
   module Utils
-
     # @return [Integer] current epoch time * 1000 rounded
     def get_current_timestamp
       Time.now.utc.to_i * 1000.round
@@ -50,8 +49,6 @@ module VeracodeApiSigning
     def get_scheme_from_url(url)
       parsed_url(url).scheme.to_s
     end
-
-    private
 
     def parsed_url(url)
       URI(url)

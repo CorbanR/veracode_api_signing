@@ -33,7 +33,7 @@ module VeracodeApiSigning
     #     format_veracode_hmac_header(auth_scheme="VERACODE-HMAC-SHA-256", api_key_id="702a1650", timestamp="1445452792746", nonce="3b1974fbaa7c97cc", signature="b81c0315b8df360778083d1b408916f8") => "VERACODE-HMAC-SHA-256 id=702a1650,ts=1445452792746,nonce=3b1974fbaa7c97cc,sig=b81c0315b8df360778083d1b408916f8"
     # @return [String] the formatted hmac header
     def format_veracode_hmac_header(auth_scheme, api_key_id, timestamp, nonce, signature)
-      # Note: This should _NOT_ manipulate case and so-on, that would likely break things.
+      # NOTE: This should _NOT_ manipulate case and so-on, that would likely break things.
       api_key_id = remove_prefix_from_api_credential(api_key_id)
       "#{auth_scheme} id=#{api_key_id},ts=#{timestamp},nonce=#{nonce},sig=#{signature}"
     end

@@ -9,7 +9,10 @@ require "veracode_api_signing/validation"
 
 module VeracodeApiSigning
   class HMACAuth
-    include Regions, Formatters, Utils, Validation
+    include Validation
+    include Utils
+    include Formatters
+    include Regions
 
     DEFAULT_AUTH_SCHEME = "VERACODE-HMAC-SHA-256"
 
@@ -20,12 +23,12 @@ module VeracodeApiSigning
     # @param api_key_secret [String] The user's API secret key
     # @param auth_scheme [String] What authentication algorithm will be used to create the signature of the request
     # @return [String] The value of Veracode compliant HMAC header
-    def generate_veracode_hmac_header(host, path, method, api_key_id, api_key_secret, auth_scheme=DEFAULT_AUTH_SCHEME)
+    def generate_veracode_hmac_header(host, path, method, api_key_id, api_key_secret, auth_scheme = DEFAULT_AUTH_SCHEME)
       signing_data = format_signing_data(api_key_id, host, path, method)
       timestamp = get_current_timestamp
       nonce = generate_nonce
       signature = create_signature(auth_scheme, api_key_secret, signing_data, timestamp, nonce)
-      return format_veracode_hmac_header(auth_scheme, api_key_id, timestamp, nonce, signature)
+      format_veracode_hmac_header(auth_scheme, api_key_id, timestamp, nonce, signature)
     end
 
     private
@@ -39,7 +42,7 @@ module VeracodeApiSigning
     # @raise [VeracodeApiSigning::UnsupportedAuthSchemeException] if auth scheme is not supported
     def create_signature(auth_scheme, api_key_secret, signing_data, timestamp, nonce)
       if auth_scheme == "VERACODE-HMAC-SHA-256"
-        return create_hmac_sha_256_signature(api_key_secret, signing_data, timestamp, nonce)
+        create_hmac_sha_256_signature(api_key_secret, signing_data, timestamp, nonce)
       else
         raise VeracodeApiSigning::UnsupportedAuthSchemeException, "Auth scheme #{auth_scheme} not supported"
       end
@@ -56,7 +59,7 @@ module VeracodeApiSigning
       key_date = generate_digest(key_nonce, timestamp.to_s.encode)
       signature_key = generate_digest(key_date, "vcode_request_version_1".encode)
 
-      OpenSSL::HMAC.hexdigest('sha256', signature_key, signing_data.encode)
+      OpenSSL::HMAC.hexdigest("sha256", signature_key, signing_data.encode)
     end
 
     # @param hex_string [String] the hex string
@@ -69,7 +72,7 @@ module VeracodeApiSigning
     end
 
     def generate_digest(key, data)
-      OpenSSL::HMAC.digest('sha256', key, data)
+      OpenSSL::HMAC.digest("sha256", key, data)
     end
-    end
+  end
 end

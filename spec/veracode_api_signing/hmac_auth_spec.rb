@@ -3,13 +3,12 @@
 require "veracode_api_signing/hmac_auth"
 
 RSpec.describe VeracodeApiSigning::HMACAuth do
-
   describe ".generate_veracode_hmac_header" do
-    let(:api_key_id) {"3ddaeeb10ca690df3fee5e3bd1c329fa"}
-    let(:api_key_secret) {"0123456789abcdef"*8}
-    let(:host) {"api.veracode.com"}
-    let(:path) {"/v1/results"}
-    let(:method) {"GET"}
+    let(:api_key_id) { "3ddaeeb10ca690df3fee5e3bd1c329fa" }
+    let(:api_key_secret) { "0123456789abcdef" * 8 }
+    let(:host) { "api.veracode.com" }
+    let(:path) { "/v1/results" }
+    let(:method) { "GET" }
 
     context "when params valid" do
       it "returns signature" do
@@ -21,7 +20,8 @@ RSpec.describe VeracodeApiSigning::HMACAuth do
     context "when params invalid" do
       it "raises error" do
         expect do
-          described_class.new.generate_veracode_hmac_header(host, path, method, api_key_id, api_key_secret, "BAD-HMAC-SCHEME")
+          described_class.new.generate_veracode_hmac_header(host, path, method, api_key_id, api_key_secret,
+                                                            "BAD-HMAC-SCHEME")
         end.to raise_error(VeracodeApiSigning::UnsupportedAuthSchemeException)
       end
     end

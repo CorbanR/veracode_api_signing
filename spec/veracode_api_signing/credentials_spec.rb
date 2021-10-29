@@ -12,27 +12,26 @@ RSpec.describe VeracodeApiSigning::Credentials do
     end
 
     let(:test_credentials_file) do
-      <<-EOF
-[default]
-veracode_api_key_id = 3ddaeeb10ca690df3fee5e3bd1c329fa
-veracode_api_key_secret = 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+      <<~EOF
+        [default]
+        veracode_api_key_id = 3ddaeeb10ca690df3fee5e3bd1c329fa
+        veracode_api_key_secret = 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
       EOF
     end
 
     let(:test_credentials_file_multiple) do
-      <<-EOF
-[default]
-veracode_api_key_id = abc123
-veracode_api_key_secret = 01234
-[test]
-veracode_api_key_id = 3ddaeeb10ca690df3fee5e3bd1c329fa
-veracode_api_key_secret = 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+      <<~EOF
+        [default]
+        veracode_api_key_id = abc123
+        veracode_api_key_secret = 01234
+        [test]
+        veracode_api_key_id = 3ddaeeb10ca690df3fee5e3bd1c329fa
+        veracode_api_key_secret = 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
       EOF
     end
 
     context "when credential environment variables are set" do
       it "fetches credentials from the environment" do
-
         stub_env(test_credentials)
         api_key_id, api_key_secret = described_class.new.get_credentials
         credentials =
@@ -66,7 +65,7 @@ veracode_api_key_secret = 0123456789abcdef0123456789abcdef0123456789abcdef012345
         it "fetches correct profile from credentials file" do
           allow(File).to receive(:exist?).with(anything).and_return(true)
           allow(File).to receive(:read).with(anything).and_return(test_credentials_file_multiple)
-          stub_env({"VERACODE_API_PROFILE" => "test"})
+          stub_env({ "VERACODE_API_PROFILE" => "test" })
 
           api_key_id, api_key_secret = described_class.new.get_credentials
           credentials =
@@ -82,22 +81,27 @@ veracode_api_key_secret = 0123456789abcdef0123456789abcdef0123456789abcdef012345
       context "when credentials file does not exist" do
         it "raises 'could not read' error" do
           allow(File).to receive(:exist?).with(anything).and_return(false)
-          expect { described_class.new.get_credentials }.to raise_error(VeracodeApiSigning::CredentialsError, /Could not read/)
+          expect do
+            described_class.new.get_credentials
+          end.to raise_error(VeracodeApiSigning::CredentialsError, /Could not read/)
         end
       end
 
       context "when credentials file does not contain secret" do
         let(:test_credentials_file_invalid) do
-          <<-EOF
-[default]
-veracode_api_key_id = abc123
+          <<~EOF
+            [default]
+            veracode_api_key_id = abc123
           EOF
         end
 
         it "raises 'Unable to determine credentials' error" do
           allow(File).to receive(:exist?).with(anything).and_return(true)
           allow(File).to receive(:read).with(anything).and_return(test_credentials_file_invalid)
-          expect { described_class.new.get_credentials }.to raise_error(VeracodeApiSigning::CredentialsError, /Unable to determine credentials/)
+          expect do
+            described_class.new.get_credentials
+          end.to raise_error(VeracodeApiSigning::CredentialsError,
+                             /Unable to determine credentials/)
         end
       end
     end
