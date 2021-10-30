@@ -32,10 +32,9 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Set up ruby 3.0
-        uses: actions/setup-ruby@v1
+      - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.0'
+          ruby-version: ${{ matrix.ruby }}
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
       - name: Yard documents
