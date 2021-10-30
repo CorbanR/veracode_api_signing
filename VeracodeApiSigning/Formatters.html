@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: VeracodeApiSigning::Formatters
+  
+    &mdash; Documentation by YARD 0.9.26
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "VeracodeApiSigning::Formatters";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (F)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../VeracodeApiSigning.html" title="VeracodeApiSigning (module)">VeracodeApiSigning</a></span></span>
+     &raquo; 
+    <span class="title">Formatters</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: VeracodeApiSigning::Formatters
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  <dl>
+      <dt>Includes:</dt>
+      <dd><span class='object_link'><a href="Regions.html" title="VeracodeApiSigning::Regions (module)">Regions</a></span></dd>
+  </dl>
+  
+  
+
+  
+  <dl>
+    <dt>Included in:</dt>
+    <dd><span class='object_link'><a href="HMACAuth.html" title="VeracodeApiSigning::HMACAuth (class)">HMACAuth</a></span></dd>
+  </dl>
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/veracode_api_signing/formatters.rb</dd>
+  </dl>
+  
+</div>
+
+
+
+
+  <h2>Constant Summary</h2>
+  
+  <h3 class="inherited">Constants included
+     from <span class='object_link'><a href="Regions.html" title="VeracodeApiSigning::Regions (module)">Regions</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Regions.html#REGIONS-constant" title="VeracodeApiSigning::Regions::REGIONS (constant)">Regions::REGIONS</a></span></p>
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#format_signing_data-instance_method" title="#format_signing_data (instance method)">#<strong>format_signing_data</strong>(api_key_id, host, url, method)  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The formatted signing data.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#format_veracode_hmac_header-instance_method" title="#format_veracode_hmac_header (instance method)">#<strong>format_veracode_hmac_header</strong>(auth_scheme, api_key_id, timestamp, nonce, signature)  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The formatted hmac header.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Regions.html" title="VeracodeApiSigning::Regions (module)">Regions</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Regions.html#get_region_for_api_credential-instance_method" title="VeracodeApiSigning::Regions#get_region_for_api_credential (method)">#get_region_for_api_credential</a></span>, <span class='object_link'><a href="Regions.html#remove_prefix_from_api_credential-instance_method" title="VeracodeApiSigning::Regions#remove_prefix_from_api_credential (method)">#remove_prefix_from_api_credential</a></span></p>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="format_signing_data-instance_method">
+  
+    #<strong>format_signing_data</strong>(api_key_id, host, url, method)  &#x21d2; <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the formatted signing data.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_format_signing_data'>format_signing_data</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0123456789abcdef</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>veracode.com</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/home</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>GET</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='comment'>#=&gt; &quot;id=0123456789abcdef&amp;host=veracode.com&amp;url=/home&amp;method=GET&quot;</span></code></pre>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_format_signing_data'>format_signing_data</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0123456789abcdef</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>VERACODE.com</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/home</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>get</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='comment'>#=&gt; &quot;id=0123456789abcdef&amp;host=veracode.com&amp;url=/home&amp;method=GET&quot;</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>api_key_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the veracode api key</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>host</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the url host</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>url</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the url path</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>method</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>method to use [get, post, put, patch, delete]</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the formatted signing data</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/veracode_api_signing/formatters.rb', line 17</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_format_signing_data'>format_signing_data</span><span class='lparen'>(</span><span class='id identifier rubyid_api_key_id'>api_key_id</span><span class='comma'>,</span> <span class='id identifier rubyid_host'>host</span><span class='comma'>,</span> <span class='id identifier rubyid_url'>url</span><span class='comma'>,</span> <span class='id identifier rubyid_method'>method</span><span class='rparen'>)</span>
+  <span class='comment'># Ensure some things are in the right case.
+</span>  <span class='comment'># Note: that path (url) is allowed to be case-sensitive (because path is sent along verbatim)
+</span>  <span class='id identifier rubyid_api_key_id'>api_key_id</span> <span class='op'>=</span> <span class='id identifier rubyid_remove_prefix_from_api_credential'>remove_prefix_from_api_credential</span><span class='lparen'>(</span><span class='id identifier rubyid_api_key_id'>api_key_id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span>
+  <span class='id identifier rubyid_host'>host</span> <span class='op'>=</span> <span class='id identifier rubyid_host'>host</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span>
+  <span class='id identifier rubyid_method'>method</span> <span class='op'>=</span> <span class='id identifier rubyid_method'>method</span><span class='period'>.</span><span class='id identifier rubyid_upcase'>upcase</span>
+
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>id=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_api_key_id'>api_key_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>&amp;host=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_host'>host</span><span class='embexpr_end'>}</span><span class='tstring_content'>&amp;url=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_url'>url</span><span class='embexpr_end'>}</span><span class='tstring_content'>&amp;method=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_method'>method</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="format_veracode_hmac_header-instance_method">
+  
+    #<strong>format_veracode_hmac_header</strong>(auth_scheme, api_key_id, timestamp, nonce, signature)  &#x21d2; <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the formatted hmac header.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_format_veracode_hmac_header'>format_veracode_hmac_header</span><span class='lparen'>(</span><span class='id identifier rubyid_auth_scheme'>auth_scheme</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>VERACODE-HMAC-SHA-256</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_api_key_id'>api_key_id</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>702a1650</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_timestamp'>timestamp</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1445452792746</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_nonce'>nonce</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>3b1974fbaa7c97cc</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_signature'>signature</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>b81c0315b8df360778083d1b408916f8</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>VERACODE-HMAC-SHA-256 id=702a1650,ts=1445452792746,nonce=3b1974fbaa7c97cc,sig=b81c0315b8df360778083d1b408916f8</span><span class='tstring_end'>&quot;</span></span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>auth_scheme</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the veracode auth scheme</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>api_key_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the veracode api key</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>timestamp</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the epoch timestamp</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>nonce</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the random nonce</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>signature</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the veracode signature</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the formatted hmac header</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+35
+36
+37
+38
+39</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/veracode_api_signing/formatters.rb', line 35</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_format_veracode_hmac_header'>format_veracode_hmac_header</span><span class='lparen'>(</span><span class='id identifier rubyid_auth_scheme'>auth_scheme</span><span class='comma'>,</span> <span class='id identifier rubyid_api_key_id'>api_key_id</span><span class='comma'>,</span> <span class='id identifier rubyid_timestamp'>timestamp</span><span class='comma'>,</span> <span class='id identifier rubyid_nonce'>nonce</span><span class='comma'>,</span> <span class='id identifier rubyid_signature'>signature</span><span class='rparen'>)</span>
+  <span class='comment'># NOTE: This should _NOT_ manipulate case and so-on, that would likely break things.
+</span>  <span class='id identifier rubyid_api_key_id'>api_key_id</span> <span class='op'>=</span> <span class='id identifier rubyid_remove_prefix_from_api_credential'>remove_prefix_from_api_credential</span><span class='lparen'>(</span><span class='id identifier rubyid_api_key_id'>api_key_id</span><span class='rparen'>)</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_auth_scheme'>auth_scheme</span><span class='embexpr_end'>}</span><span class='tstring_content'> id=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_api_key_id'>api_key_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>,ts=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_timestamp'>timestamp</span><span class='embexpr_end'>}</span><span class='tstring_content'>,nonce=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_nonce'>nonce</span><span class='embexpr_end'>}</span><span class='tstring_content'>,sig=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_signature'>signature</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Sat Oct 30 04:29:40 2021 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.26 (ruby-3.0.2).
+</div>
+
+    </div>
+  </body>
+</html>
