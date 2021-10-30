@@ -19,6 +19,7 @@ Gem::Specification.new do |spec|
   spec.metadata["allowed_push_host"] = "TODO: Set to 'https://mygemserver.com'"
 
   spec.metadata["homepage_uri"] = spec.homepage
+  spec.metadata["documentation_uri"] = "https://www.raunco.co/veracode_api_signing/"
   spec.metadata["source_code_uri"] = "https://github.com/CorbanR/veracode_api_signing"
   spec.metadata["changelog_uri"] = "https://github.com/CorbanR/veracode_api_signing/blob/main/CHANGELOG.md"
 
