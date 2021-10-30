@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
   spec.license       = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
 
-  spec.metadata["allowed_push_host"] = "TODO: Set to 'https://mygemserver.com'"
+  spec.metadata["allowed_push_host"] = "https://rubygems.org/"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["documentation_uri"] = "https://www.raunco.co/veracode_api_signing/"
@@ -24,7 +24,7 @@ Gem::Specification.new do |spec|
   spec.metadata["changelog_uri"] = "https://github.com/CorbanR/veracode_api_signing/blob/main/CHANGELOG.md"
 
   spec.files = Dir.chdir(File.expand_path(__dir__)) do
-    `git ls-files -z`.split("\x0").reject { |f| f.match(%r{\A(?:test|spec|features)/}) }
+    `git ls-files -z`.split("\x0").reject { |f| f.match(%r{\A(?:test|spec|features|examples|docs|coverage)/}) }
   end
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
