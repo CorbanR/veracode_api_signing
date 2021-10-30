@@ -1,5 +1,11 @@
-name: Tests
-on: [push, pull_request]
+name: VeracodeApiSigning
+on:
+  pull_request:
+    branches-ignore:
+      - 'gh-pages'
+  push:
+    branches-ignore:
+      - 'gh-pages'
 jobs:
   test:
     strategy:
@@ -16,3 +22,33 @@ jobs:
         ruby-version: ${{ matrix.ruby }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
     - run: bundle exec rake
+
+  deploy:
+    needs: 'test'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Set up ruby 3.0
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '3.0'
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+
+      - name: Yard documents
+        run: |
+          bundle exec rake yard
+
+      - name: Deploy pages
+        if: github.event_name == 'push'
+        uses: JamesIves/github-pages-deploy-action@4.1.5
+        with:
+          SSH: false
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: doc
+          CLEAN: true
+          CLEAN_EXCLUDE: '[".gitattributes", ".gitignore", "CNAME", "LICENSE"]'

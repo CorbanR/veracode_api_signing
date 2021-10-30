@@ -1,6 +1,6 @@
-# Veracode::Api::Signing
+# VeracodeApiSigning
 
-![tests](https://github.com/CorbanR/veracode_api_signing/actions/workflows/tests/badge.svg)
+![tests](https://github.com/CorbanR/veracode_api_signing/actions/workflows/tests.yml/badge.svg)
 
 Library which uses HMAC to generate signed requests for Veracode API
 
