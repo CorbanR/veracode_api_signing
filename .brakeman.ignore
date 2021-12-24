@@ -1,0 +1,22 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "Authentication",
+      "warning_code": 101,
+      "fingerprint": "ed197e75289bf8a8e2150b832564f162bd93b971008455079f89032792a0e0f1",
+      "check_name": "Secrets",
+      "message": "Hardcoded value for `ENV_API_SECRET_KEY_NAME` in source code",
+      "file": "lib/veracode_api_signing/credentials.rb",
+      "line": 10,
+      "link": "https://brakemanscanner.org/docs/warning_types/authentication/",
+      "code": null,
+      "render_path": null,
+      "location": null,
+      "user_input": null,
+      "confidence": "Medium",
+      "note": "Not actually a hardcoded secret, this value represents the name of the environment variable used when looking for credentials."
+    }
+  ],
+  "updated": "2021-12-24 09:06:49 -0700",
+  "brakeman_version": "5.2.0"
+}
