@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    veracode_api_signing (1.0.0)
+    veracode_api_signing (1.0.1)
 
 GEM
   remote: https://rubygems.org/
