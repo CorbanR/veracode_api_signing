@@ -1,17 +1,18 @@
 PATH
   remote: ../..
   specs:
-    veracode_api_signing (0.1.0)
+    veracode_api_signing (1.0.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
 
 PLATFORMS
+  arm64-darwin-20
   x86_64-darwin-17
 
 DEPENDENCIES
   veracode_api_signing!
 
 BUNDLED WITH
-   2.2.30
+   2.3.3
