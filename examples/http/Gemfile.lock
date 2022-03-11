@@ -9,10 +9,11 @@ GEM
 
 PLATFORMS
   arm64-darwin-20
+  arm64-darwin-21
   x86_64-darwin-17
 
 DEPENDENCIES
   veracode_api_signing!
 
 BUNDLED WITH
-   2.3.3
+   2.3.9
