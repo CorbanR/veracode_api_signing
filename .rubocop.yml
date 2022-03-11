@@ -7,7 +7,8 @@ require:
 
 AllCops:
   NewCops: enable
-  TargetRubyVersion: 2.7
+  CacheRootDirectory: tmp/
+  TargetRubyVersion: 3.1
 
 Style/StringLiterals:
   Enabled: true
@@ -16,6 +17,10 @@ Style/StringLiterals:
 Style/StringLiteralsInInterpolation:
   Enabled: true
   EnforcedStyle: double_quotes
+
+Style/HashSyntax:
+  Enabled: true
+  EnforcedShorthandSyntax: either
 
 RSpec/ExampleLength:
   Max: 50

@@ -8,7 +8,7 @@ let
     ApplicationServices
     Security
   ]);
-  ruby = ruby_3_0;
+  ruby = ruby_3_1;
 
   # Issue with using gemspec files
   #
@@ -52,7 +52,7 @@ in mkShell rec {
     postgresql
     postgresql_13
     readline
-    ruby
+    (lowPrio ruby)
     shared-mime-info # Required for the mime gem
     sqlcipher
     sqlite
