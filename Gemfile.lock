@@ -7,7 +7,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.2)
-    brakeman (5.2.1)
+    brakeman (5.2.3)
     diff-lcs (1.5.0)
     docile (1.4.0)
     parallel (1.22.1)
