@@ -29,7 +29,7 @@ module VeracodeApiSigning
     private
 
     def get_credentials_from_environment_variables
-      [ENV[ENV_API_KEY_NAME], ENV[ENV_API_SECRET_KEY_NAME]]
+      [ENV.fetch(ENV_API_KEY_NAME, nil), ENV.fetch(ENV_API_SECRET_KEY_NAME, nil)]
     end
 
     def get_credentials_from_filesystem(auth_file)
