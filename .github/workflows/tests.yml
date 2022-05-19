@@ -48,4 +48,4 @@ jobs:
           branch: gh-pages
           folder: doc
           clean: true
-          clean-exclude: '[".gitattributes", ".gitignore", "CNAME", "LICENSE"]'
+          #clean-exclude: '[".gitattributes", ".gitignore", "CNAME", "LICENSE"]'

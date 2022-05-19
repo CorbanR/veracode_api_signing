@@ -22,7 +22,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Similarly to the [veracode-api-signing](https://pypi.org/project/veracode-api-signing/) python gem, this gem is meant to help you make
+API calls to veracode. [See veracode docs](https://docs.veracode.com/r/t_install_api_authen) for some example usage, as well as this projects `./examples/*` folder.
+
+
+Documentation can be found at [https://www.raunco.co/veracode_api_signing/](https://www.raunco.co/veracode_api_signing/)
 
 ## Development
 
@@ -45,7 +49,7 @@ Optional tools
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/veracode_api_signing.
+Bug reports and pull requests are welcome on GitHub at [https://github.com/CorbanR/veracode_api_signing](https://github.com/CorbanR/veracode_api_signing)
 
 ## License
 
