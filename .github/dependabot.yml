@@ -8,7 +8,12 @@ updates:
     labels:
       - "dependencies"
     open-pull-requests-limit: 5
-    # This option will also apply to security patches
-    # lockfile-only respects the version constraints specified in the Gemfile.
-    # Otherwise both the Gemfile and Gemfile.lock would be updated to use the latest version
     versioning-strategy: lockfile-only
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
