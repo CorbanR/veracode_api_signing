@@ -8,6 +8,7 @@ on:
       - 'gh-pages'
 jobs:
   test:
+    if: github.ref != 'refs/heads/main' or ${{ contains(github.event.head_commit.message, '#run-tests') }}
     strategy:
       fail-fast: false
       max-parallel: 5
